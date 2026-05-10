@@ -2,10 +2,15 @@
 <?php
 
 require __DIR__ . '/../vendor/autoload.php';
+include __DIR__ . '/../vendor/symfony/var-dumper/Resources/functions/dump.php';
 
-use App\Command\CopyCommand;
+use App\Command\Check;
+use App\Command\Copy;
+use App\Command\Info;
 use Symfony\Component\Console\Application;
 
 $app = new Application('shreddis', '1.0.0');
-$app->addCommand(new CopyCommand());
+$app->addCommand(new Info());
+$app->addCommand(new Copy());
+$app->addCommand(new Check());
 $app->run();
