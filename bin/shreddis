@@ -7,6 +7,5 @@ use App\Command\CopyCommand;
 use Symfony\Component\Console\Application;
 
 $app = new Application('shreddis', '1.0.0');
-$app->add(new CopyCommand());
-$app->setDefaultCommand('benchmark', true);
+$app->addCommand(new CopyCommand());
 $app->run();
